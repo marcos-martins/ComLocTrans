@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CadastroEmpresaPage } from './../cadastro-empresa/cadastro-empresa';
-import { CadastroUsuarioPage } from './../cadastro-usuario/cadastro-usuario';
-import { CadastroTransportePage } from './../cadastro-transporte/cadastro-transporte';
+
+import { HomeEmpresaPage } from './../home-empresa/home-empresa';
+import { HomeMotoristaPage } from './../home-motorista/home-motorista';
+import { HomeUsuarioPage } from './../home-usuario/home-usuario';
+
+import { AutenticarService } from './../service/autenticar.service';
 
 
 @IonicPage()
@@ -12,15 +15,40 @@ import { CadastroTransportePage } from './../cadastro-transporte/cadastro-transp
 })
 export class LoginPage {
 
-  constructor(private navCtrl: NavController, private navParams: NavParams) {
+  login: string = 'empresa';
+  senha: string ='empresa';
+
+  constructor(private autenticarService: AutenticarService,
+              private navCtrl: NavController, 
+              private navParams: NavParams) {
   }
 
   ionViewDidLoad() {
    
   }
 
-  login(){
-    this.navCtrl.push(CadastroEmpresaPage);
+  autenticar(){
+
+    const usuario = this.autenticarService.autenticar(this.login, this.senha);
+    
+    switch(usuario.tipo) { 
+      case "USUARIO": { 
+          this.navCtrl.setRoot(HomeUsuarioPage);
+        break; 
+        } 
+      case "EMPRESA": { 
+          this.navCtrl.setRoot(HomeEmpresaPage);
+        break; 
+        } 
+      case "MOTORISTA": {
+          this.navCtrl.setRoot(HomeMotoristaPage);
+          break;    
+        }  
+      default: { 
+          console.log("Login incorreto" + usuario.tipo); 
+        break;              
+        } 
+    }
   }
 
 }

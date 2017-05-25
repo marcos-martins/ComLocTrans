@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Cadastro transporte</ion-title>
+
+      <ion-buttons end>
+      <button ion-button (click)="doClick()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-menu [content]="mycontent">
+  <ion-content>
+    <ion-list >
+      <h1  ion-item text-left color="secondary" >Menu</h1>
+      <button ion-item menuClose (click)="openPage(cadastroTransportePage)">
+        Cadastro transporte
+      </button>
+      <button ion-item menuClose (click)="openPage(cadastroRotaPage)">
+        Cadastro rota
+      </button>
+      <button ion-item menuClose (click)="openPage(cadastroRotaPage)">
+        Dogs
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

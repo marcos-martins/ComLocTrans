@@ -7,14 +7,14 @@
   <ion-list>
       <ion-item>
         <ion-label floating>Usuário</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [(ngModel)]= "login"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Senha</ion-label>
-        <ion-input type="password" value=""></ion-input>
+        <ion-input type="password" [(ngModel)]="senha"></ion-input>
       </ion-item>
     </ion-list>
     <div padding>
-      <button ion-button color="primary" block (click)="login()" >Entrar</button>
+      <button ion-button color="primary" block (click)="autenticar()" >Entrar</button>
     </div>
 </ion-content>
