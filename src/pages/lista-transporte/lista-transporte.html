@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar >
+     <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Transportes</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="adicionar()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+<ion-card *ngFor="let trans of transportes">
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{ trans.imagemMotorista }}">
+    </ion-avatar>
+    <h2> {{ trans.nomeMotorista }}</h2>
+  </ion-item>
+  <img src="{{ trans.imagemTransporte }} ">
+
+  <ion-card-content>
+    <p> {{ trans.descricao }} </p>
+  </ion-card-content>
+
+  <ion-row align-items-right>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="person"></ion-icon>
+        <div>{{ trans.qtdUsuarios }} Usuarios</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+</ion-content>

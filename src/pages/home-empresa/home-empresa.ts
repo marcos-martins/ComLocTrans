@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 
 import { CadastroRotaPage } from './../cadastro-rota/cadastro-rota';
-import { CadastroTransportePage } from './../cadastro-transporte/cadastro-transporte';
+import { ListaTransportePage } from './../lista-transporte/lista-transporte';
 
 
 @IonicPage()
@@ -14,9 +14,9 @@ import { CadastroTransportePage } from './../cadastro-transporte/cadastro-transp
 })
 export class HomeEmpresaPage {
 
-  private rootPage: any;
+  private rootPage: any = ListaTransportePage;
   private cadastroRotaPage: any;
-  private cadastroTransportePage: any;
+  private listaTransporte: any;
 
 
   constructor(private menuCtrl: MenuController,
@@ -24,7 +24,7 @@ export class HomeEmpresaPage {
               private navParams: NavParams) {
 
     this.cadastroRotaPage = CadastroRotaPage;
-    this.cadastroTransportePage = CadastroTransportePage;
+    this.listaTransporte = ListaTransportePage;
   }
 
   ionViewDidLoad() {
@@ -33,6 +33,7 @@ export class HomeEmpresaPage {
   }
 
   openPage(p) {
+    //this.navCtrl.push(p);
     this.rootPage = p;
   }
 

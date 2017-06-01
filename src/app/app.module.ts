@@ -1,10 +1,12 @@
+import { ListaTransportePage } from './../pages/lista-transporte/lista-transporte';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { Camera } from '@ionic-native/camera';
+import {GoogleMaps} from '@ionic-native/google-maps';
 import { MyApp } from './app.component';
 
 import { HomeEmpresaPage } from './../pages/home-empresa/home-empresa';
@@ -32,7 +34,8 @@ import { EmpresaService } from './../pages/service/empresa.service';
     HomeEmpresaPage,
     HomeMotoristaPage,
     HomePage,
-    HomeUsuarioPage
+    HomeUsuarioPage,
+    ListaTransportePage
   ],
   imports: [
     BrowserModule,
@@ -50,13 +53,16 @@ import { EmpresaService } from './../pages/service/empresa.service';
     HomeEmpresaPage,
     HomeMotoristaPage,
     HomePage,
-    HomeUsuarioPage
+    HomeUsuarioPage,
+    ListaTransportePage
   ],
   providers: [
     AutenticarService,
+    Camera,
     EmpresaService,
     StatusBar,
     SplashScreen,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

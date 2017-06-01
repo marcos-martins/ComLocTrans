@@ -3,7 +3,7 @@
   <ion-navbar>
     <ion-title>Cadastro de transporte</ion-title>
      <ion-buttons end>
-      <button ion-button icon-only (click)="excluir()"  >
+      <button ion-button icon-only (click)="excluir()"  *ngIf="transporte.id">
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-buttons>
@@ -18,16 +18,19 @@
   <ion-list>
       <ion-item>
         <ion-label floating>Descrição</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [(ngModel)]="transporte.descricao" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Origem Rota</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-label>Motoristas</ion-label>
+        <ion-select [(ngModel)]="motoristaSelecionado">
+          <ion-option *ngFor="let mot of motoristas" value="{{ mot.nome }}">{{ mot.nome }}</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label floating>Destino Rota</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <button ion-button icon-only (click)="openGallery()">
+          <ion-icon name="contact"></ion-icon>
+        </button>
       </ion-item>
     </ion-list>
-
+    <div #map id="map" style="height:100%;"></div>
 </ion-content>

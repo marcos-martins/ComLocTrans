@@ -11,6 +11,9 @@ import { CadastroTransportePage } from './cadastro-transporte';
   ],
   exports: [
     CadastroTransportePage
+  ],
+  providers: [
+    
   ]
 })
 export class CadastroTransportePageModule {}
