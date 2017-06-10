@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { MenuController } from 'ionic-angular';
 
-import { CadastroRotaPage } from './../cadastro-rota/cadastro-rota';
 import { ListaTransportePage } from './../lista-transporte/lista-transporte';
 
 
@@ -15,7 +14,6 @@ import { ListaTransportePage } from './../lista-transporte/lista-transporte';
 export class HomeEmpresaPage {
 
   private rootPage: any = ListaTransportePage;
-  private cadastroRotaPage: any;
   private listaTransporte: any;
 
 
@@ -23,7 +21,6 @@ export class HomeEmpresaPage {
               private navCtrl: NavController, 
               private navParams: NavParams) {
 
-    this.cadastroRotaPage = CadastroRotaPage;
     this.listaTransporte = ListaTransportePage;
   }
 

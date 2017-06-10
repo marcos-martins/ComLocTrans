@@ -9,13 +9,16 @@ import { Camera } from '@ionic-native/camera';
 import {GoogleMaps} from '@ionic-native/google-maps';
 import { MyApp } from './app.component';
 
+import { AutoCompleteEnderecoPage } from './../pages/auto-complete-endereco/auto-complete-endereco';
 import { HomeEmpresaPage } from './../pages/home-empresa/home-empresa';
 import { HomePage } from '../pages/home/home';
 import { HomeMotoristaPage } from './../pages/home-motorista/home-motorista';
 import { HomeUsuarioPage } from './../pages/home-usuario/home-usuario';
 import { CadastroEmpresaPage } from './../pages/cadastro-empresa/cadastro-empresa';
-import { CadastroRotaPage } from './../pages/cadastro-rota/cadastro-rota';
+
 import { CadastroTransportePage } from './../pages/cadastro-transporte/cadastro-transporte';
+import { CadastroTransporteRotaPage } from './../pages/cadastro-transporte-rota/cadastro-transporte-rota';
+ 
 import { CadastroUsuarioPage } from './../pages/cadastro-usuario/cadastro-usuario';
 import { LoginPage } from './../pages/login/login';
 
@@ -25,10 +28,11 @@ import { EmpresaService } from './../pages/service/empresa.service';
 
 @NgModule({
   declarations: [
+    AutoCompleteEnderecoPage,
     CadastroEmpresaPage,
-    CadastroRotaPage,
     CadastroUsuarioPage,
     CadastroTransportePage,
+    CadastroTransporteRotaPage,
     LoginPage,
     MyApp,
     HomeEmpresaPage,
@@ -44,10 +48,11 @@ import { EmpresaService } from './../pages/service/empresa.service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    AutoCompleteEnderecoPage,
     CadastroEmpresaPage,
-    CadastroRotaPage,
     CadastroUsuarioPage,
     CadastroTransportePage,
+    CadastroTransporteRotaPage,
     LoginPage,
     MyApp,
     HomeEmpresaPage,
